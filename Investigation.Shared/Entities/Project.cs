@@ -13,38 +13,38 @@ namespace Investigation.Shared.Entities
         public int Id { get; set; }
 
         [Display(Name = "Nombre del proyecto")]
-        [MaxLength(50, ErrorMessage = "The {0} field can not have more than {1} characters.")]
+        [MaxLength(100, ErrorMessage = "The {0} field can not have more than {1} characters.")]
         [Required(ErrorMessage = "The field {0} is mandatory.")]
         public string NameProject { get; set; }
 
         [Display(Name = "Fecha de inicio")]
-        [MaxLength(50, ErrorMessage = "The {0} field can not have more than {1} characters.")]
+        [MaxLength(100, ErrorMessage = "The {0} field can not have more than {1} characters.")]
         [Required(ErrorMessage = "The field {0} is mandatory.")]
-        public string Date { get; set; }
+        public string DateInitial { get; set; }
 
         [Display(Name = "Fecha de Finalización")]
-        [MaxLength(50, ErrorMessage = "The {0} field can not have more than {1} characters.")]
+        [MaxLength(100, ErrorMessage = "The {0} field can not have more than {1} characters.")]
         [Required(ErrorMessage = "The field {0} is mandatory.")]
         public string DateFinal { get; set; }
 
         [Display(Name = "Lider del Proyecto")]
-        [MaxLength(20, ErrorMessage = "The {0} field can not have more than {1} characters.")]
+        [MaxLength(100, ErrorMessage = "The {0} field can not have more than {1} characters.")]
         public string NameLider { get; set; }
 
         [Display(Name = "Descripción")]
-        [MaxLength(20, ErrorMessage = "The {0} field can not have more than {1} characters.")]
+        [MaxLength(100, ErrorMessage = "The {0} field can not have more than {1} characters.")]
         public string Description { get; set; }
 
 
         [Display(Name = "Área de investigación")]
-        [MaxLength(20, ErrorMessage = "The {0} field can not have more than {1} characters.")]
-        public string Area { get; set; }
-
-
-
-
         [MaxLength(100, ErrorMessage = "The {0} field can not have more than {1} characters.")]
-        public string Address { get; set; }
+        public string AreaWork { get; set; }
+
+
+
+
+        //[MaxLength(100, ErrorMessage = "The {0} field can not have more than {1} characters.")]
+        //public string Address { get; set; }
 
         //public string FullName => $"{FirstName} {LastName}";
 
