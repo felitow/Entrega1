@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Investigation.API.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20230901061835_InitialDb")]
-    partial class InitialDb
+    [Migration("20230901071518_Migracion")]
+    partial class Migracion
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -68,6 +68,42 @@ namespace Investigation.API.Migrations
                         .IsUnique();
 
                     b.ToTable("Projects");
+                });
+
+            modelBuilder.Entity("Investigation.Shared.Entities.Scientist", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("afiliacion")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("especializacion")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("nameCientifico")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("rolproyecto")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("nameCientifico")
+                        .IsUnique();
+
+                    b.ToTable("Scientists");
                 });
 #pragma warning restore 612, 618
         }

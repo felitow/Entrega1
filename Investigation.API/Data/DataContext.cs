@@ -10,15 +10,22 @@ namespace Investigation.API.Data
         public DataContext(DbContextOptions<DataContext> options) : base(options)
         {
 
+
         }
 
         public DbSet<Project> Projects { get; set; }
+
+        public  DbSet<Scientist> Scientists { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
             modelBuilder.Entity<Project>().HasIndex(c => c.NameProject).IsUnique();
+            modelBuilder.Entity<Scientist>().HasIndex(c => c.nameCientifico).IsUnique();
         }
+
+
+
 
     }
 }
